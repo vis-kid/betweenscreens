@@ -2,7 +2,7 @@
 
   <article class='article-detail'>
 
-  <h4 class='detail-post-date'><%= date %></h4>
+  <!---<h4 class='detail-post-date'><%= date %></h4>
     <h2 class='detail-post-title'><%= title %></h2>
     <section class='tag-list-section'>
       <% current_page.tags.each do |tag| %>
@@ -14,7 +14,25 @@
         <% end %>
       <% end %>
     </section>
-  
+    -->
+
+  <h4 class='detail-post-date'><%= date %></h4>
+    <h2 class='detail-post-title'><%= title %></h2>
+    <section class='tag-list-section'>
+      <% current_page.tags.each do |tag| %>
+        <% unless tag == current_page.tags.last %>
+          <%= add_link_tag(tag) %>
+          <%= " |" %>
+        <% end %>
+      <% end %>
+    </section>
+
+    <% def add_link_tag %>
+      <%= link_to "#{tag}", tag_path(tag), :class => 'tag-list-link' %>
+    <% end %>
+
+
+
     <% if soundcloud_id %>
       <section class='soundcloud-player-big'>
         <iframe 
