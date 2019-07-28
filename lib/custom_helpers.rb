@@ -32,4 +32,8 @@ module CustomHelpers
     "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/"+ soundcloud_id.to_s + "&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
   end
 
+   def add_link_tag(tag)
+     link_to "#{tag}", tag_path(tag), :class => 'tag-list-link'
+   end
+
 end
