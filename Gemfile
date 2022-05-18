@@ -21,4 +21,4 @@ gem 'bourbon', '4.2.6'
 gem 'neat'
 gem 'bitters', '1.1.0'
 
-gem 'nokogiri', '~> 1.8.2'
+gem 'nokogiri', '~> 1.13.5'
